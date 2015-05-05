@@ -22,7 +22,9 @@
     "clippy",
     "document"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "archiver": "^0.14.3"
+  },
   "devDependencies": {
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.0",
