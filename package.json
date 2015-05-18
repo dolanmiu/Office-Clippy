@@ -23,7 +23,8 @@
     "document"
   ],
   "dependencies": {
-    "archiver": "^0.14.3"
+    "archiver": "^0.14.3",
+    "xml": "^1.0.0"
   },
   "devDependencies": {
     "grunt-cli": "^0.1.13",
