@@ -1,18 +1,22 @@
 /*globals require, describe, it */
+/*jslint nomen: true */
 var assert = require('assert');
 var DOMParser = require('xmldom').DOMParser;
+var fs = require('fs');
 
 var exporter = require('../lib/exporter');
 var jsonToXml = require('../lib/exporter/jsonToXml');
+var archiver = require('../lib/exporter/archiver');
 var docx = require('../lib/docx');
 
 describe('Testing the exporter', function () {
     'use strict';
 
-    it('should return an achive file', function () {
+    it('should create an archive file', function () {
         var files = [];
 
         //generator.archive(files);
+        archiver.local(null, __dirname + '/example-output.zip');
         assert(true, 'Not done.');
     });
 

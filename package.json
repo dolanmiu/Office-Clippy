@@ -23,7 +23,7 @@
     "document"
   ],
   "dependencies": {
-    "archiver": "^0.14.3",
+    "archiver": "^0.14.4",
     "xml": "^1.0.0"
   },
   "devDependencies": {
