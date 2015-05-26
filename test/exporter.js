@@ -27,7 +27,7 @@ describe('Testing the exporter', function () {
         jsonToXml(file);
         var oParser = new DOMParser();
         var oDOM = oParser.parseFromString(file.document, "text/xml");
-        //console.log(oDOM.documentElement.nodeName == "parsererror" ? "error while parsing" : oDOM.documentElement.nodeName);
+        console.log(file.document);
         assert.equal('w:document', oDOM.documentElement.nodeName);
     });
 });

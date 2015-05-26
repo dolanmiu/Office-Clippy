@@ -18,6 +18,8 @@ describe('Testing creation of docx Office file', function () {
     it('creating a text filled paragraph in the file', function () {
         var file = docx.create();
         var paragraph = docx.createParagraph("Hello World");
+        var text = docx.createText().bold();
+        paragraph.addText(text);
         file.addParagraph(paragraph);
         console.log(JSON.stringify(file.document));
         assert.equal(true, file.document['w:document'][1]['w:body'][0].hasOwnProperty('w:p'));
