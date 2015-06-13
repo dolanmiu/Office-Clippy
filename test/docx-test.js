@@ -21,7 +21,16 @@ describe('Testing creation of docx Office file', function () {
         var text = docx.createText().bold();
         paragraph.addText(text);
         file.addParagraph(paragraph);
-        console.log(JSON.stringify(file.document));
+        //console.log(JSON.stringify(file.document));
         assert.equal(true, file.document['w:document'][1]['w:body'][0].hasOwnProperty('w:p'));
+    });
+
+    it('should create docx with heading1', function () {
+        var file = docx.create();
+        var paragraph = docx.createParagraph("Hello World").heading1();
+        var text = docx.createText();
+        paragraph.addText(text);
+        file.addParagraph(paragraph);
+        console.log(JSON.stringify(file.document));
     });
 });

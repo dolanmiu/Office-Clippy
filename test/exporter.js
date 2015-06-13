@@ -22,8 +22,10 @@ describe('Testing the exporter', function () {
 
     it('should convert officeFile JSON into a valid XML', function () {
         var file = docx.create();
-        var paragraph = docx.createParagraph();
+        var paragraph = docx.createParagraph().heading1();
+        var text = docx.createText().bold();
         file.addParagraph(paragraph);
+        paragraph.addText(text);
         jsonToXml(file);
         var oParser = new DOMParser();
         var oDOM = oParser.parseFromString(file.document, "text/xml");
