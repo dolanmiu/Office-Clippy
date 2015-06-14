@@ -31,6 +31,13 @@ describe('Testing creation of docx Office file', function () {
         var text = docx.createText();
         paragraph.addText(text);
         file.addParagraph(paragraph);
+        //console.log(JSON.stringify(file.document));
+    });
+
+    it('should create docx with table', function () {
+        var file = docx.create();
+        var table = docx.createTable(3);
+        file.addParagraph(table);
         console.log(JSON.stringify(file.document));
     });
 });

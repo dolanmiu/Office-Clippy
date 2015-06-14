@@ -1,5 +1,5 @@
-/*globals require, describe, it */
 /*jslint nomen: true */
+/*globals require, describe, it, __dirname */
 var assert = require('assert');
 var DOMParser = require('xmldom').DOMParser;
 var fs = require('fs');
@@ -26,6 +26,10 @@ describe('Testing the exporter', function () {
         var text = docx.createText().bold();
         file.addParagraph(paragraph);
         paragraph.addText(text);
+
+        var table = docx.createTable(6);
+        file.addParagraph(table);
+
         jsonToXml(file);
         var oParser = new DOMParser();
         var oDOM = oParser.parseFromString(file.document, "text/xml");
