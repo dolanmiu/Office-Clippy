@@ -6,7 +6,7 @@ var fs = require('fs');
 
 var exporter = require('../lib/exporter');
 var jsonToXml = require('../lib/exporter/jsonToXml');
-var archiver = require('../lib/exporter/archiver');
+var packer = require('../lib/exporter/packer');
 var docx = require('../lib/docx');
 
 describe('Testing the exporter', function () {
@@ -16,7 +16,7 @@ describe('Testing the exporter', function () {
         var files = [];
 
         //generator.archive(files);
-        archiver.local(null, __dirname + '/example-output.zip');
+        packer.local(null, __dirname + '/example-output.zip');
         assert(true, 'Not done.');
     });
 
