@@ -2,7 +2,7 @@
 var assert = require('assert');
 
 //var officeClippy = require('../');
-var docx = require('../lib/docx');
+var docx = require('../').docx;
 
 describe('Testing creation of docx Office file', function () {
     'use strict';

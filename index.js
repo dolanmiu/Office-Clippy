@@ -1,4 +1,3 @@
-'use strict';
-module.exports = function (str) {
-  console.log(str || 'Rainbow');
-};
+/*globals module, exports, require */
+var lib = require('./lib');
+module.exports = lib;

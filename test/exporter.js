@@ -7,7 +7,7 @@ var fs = require('fs');
 var exporter = require('../lib/exporter');
 var jsonToXml = require('../lib/exporter/jsonToXml');
 var packer = require('../lib/exporter/packer');
-var docx = require('../lib/docx');
+var docx = require('../').docx;
 
 describe('Testing the exporter', function () {
     'use strict';
