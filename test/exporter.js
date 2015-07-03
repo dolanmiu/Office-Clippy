@@ -30,10 +30,10 @@ describe('Testing the exporter', function () {
         var table = docx.createTable(6);
         file.addParagraph(table);
 
-        jsonToXml(file);
+        var xmlFile = jsonToXml(file.document);
         var oParser = new DOMParser();
-        var oDOM = oParser.parseFromString(file.document, "text/xml");
-        console.log(file.document);
+        var oDOM = oParser.parseFromString(xmlFile, "text/xml");
+        //console.log(xmlFile);
         assert.equal('w:document', oDOM.documentElement.nodeName);
     });
 });
