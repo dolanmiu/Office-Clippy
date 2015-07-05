@@ -27,7 +27,7 @@ describe('Testing creation of docx Office file', function () {
 
     it('should create docx with heading1', function () {
         var file = docx.create();
-        var paragraph = docx.createParagraph("Hello World").heading1().borderBottom();
+        var paragraph = docx.createParagraph("Hello World").heading1().thematicBreak();
         var text = docx.createText();
         paragraph.addText(text);
         file.addParagraph(paragraph);
