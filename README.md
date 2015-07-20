@@ -153,7 +153,7 @@ paragraph.addTabStop();
 
 ### Right Tab Stop
 ```
-var tabStop = docx.create\RightTabStop(2268);
+var tabStop = docx.createRightTabStop(2268);
 paragraph.addTabStop();
 ```
 2268 is the distance from the left side.
