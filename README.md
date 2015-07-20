@@ -123,6 +123,70 @@ What if you want to create a paragraph which is ***bold*** and ***italic***?
 paragraph.bold().italic();
 ```
 
+## Bullet Points
+To make a bullet point, simply make a paragraph into a bullet point:
+```
+var text = docx.createText("Bullet point");
+var paragraph = docx.createParagraph(text).bullet();
+```
+
+## Tab Stops
+If you do not know why tab stops are useful, then I recommend you do a bit of research. It enables side by side text which is nicely laid out without the need for tables, or constantly pressing space bar.
+
+![Word 2013 Tabs](http://www.teachucomp.com/wp-content/uploads/blog-4-22-2015-UsingTabStopsInWord-1024x577.png "Word 2013 Tab Stops")
+
+How it works is that, you create a `tabStop`, then add it to the paragraph. Then just add a `tab()` method call to a text object. Adding multiple `tabStops` will mean you would have to chain `tab()` until the desired `tabStop` is selected. Example is shown below.
+
+### Left Tab Stop
+```
+var tabStop = docx.createLeftTabStop(2268);
+paragraph.addTabStop();
+```
+2268 is the distance from the left side.
+
+### Center Tab Stop
+```
+var tabStop = docx.createCenterTabStop(2268);
+paragraph.addTabStop();
+```
+2268 is the distance from the left side.
+
+### Right Tab Stop
+```
+var tabStop = docx.create\RightTabStop(2268);
+paragraph.addTabStop();
+```
+2268 is the distance from the left side.
+
+### Max Right Tab Stop
+```
+var tabStop = docx.createMaxRightTabStop();
+paragraph.addTabStop();
+```
+This will create a tab stop on the very edge of the right hand side. Handy for right aligning and left aligning text on the same line.
+
+### Example
+```
+var tabStop = docx.createMaxRightTabStop();
+var paragraph = docx.createParagraph().addTabStop(tabStop);
+var leftText = docx.createText("Hey everyone").bold();
+var rightText = docx.createText("11th November 2015").tab();
+paragraph.addText(leftText);
+paragraph.addText(rightText);
+```
+The example above will create a left aligned text, and a right aligned text on the same line. The laymans approach to this problem would be to either use text boxes or tables. YUK!
+
+```
+var tabStop = docx.createMaxRightTabStop();
+var tabStop2 = docx.createLeftTabStop(1000);
+var paragraph = docx.createParagraph();
+paragraph.addTabStop(tabStop);
+paragraph.addTabStop(tabStop2);
+var text = docx.createText("Second tab stop here I come!").tab().tab();
+paragraph.addText(text);
+```
+The above shows the use of two tab stops, and how to select/use it.
+
 # Examples
 The following section:
 ```
