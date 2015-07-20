@@ -187,6 +187,23 @@ paragraph.addText(text);
 ```
 The above shows the use of two tab stops, and how to select/use it.
 
+# Exporting
+Currently, the library only supports exporting the Word Document as a downloadable file through an express server.
+## Express
+Simply use the exporter, and pass in the nessesary parameters:
+```
+var officeClippy = require('office-clippy');
+var docx = officeClippy.docx;
+var exporter = officeClippy.exporter;
+
+var doc = docx.createDocument();
+exporter.archive(res, doc, 'My first word document');
+```
+where `res` is the response object obtained through the Express router. It is that simple. The file will begin downloading in the browser.
+
+## Standalone .docx file
+Coming soon.
+
 # Examples
 The following section:
 ```
