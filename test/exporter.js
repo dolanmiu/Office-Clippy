@@ -6,7 +6,6 @@ var fs = require('fs');
 
 var exporter = require('../lib/exporter');
 var jsonToXml = require('../lib/exporter/jsonToXml');
-var packer = require('../lib/exporter/packer');
 var docx = require('../').docx;
 
 describe('Testing the exporter', function () {
@@ -20,8 +19,8 @@ describe('Testing the exporter', function () {
         file.addParagraph(paragraph);
         paragraph.addText(text);
 
-        var output = fs.createWriteStream(__dirname + '\\example-output.zip');
-        packer.local(output, file);
+        var output = fs.createWriteStream(__dirname + '\\example-output.docx');
+        exporter.local(output, file);
         assert(true, 'Not done.');
     });
 
