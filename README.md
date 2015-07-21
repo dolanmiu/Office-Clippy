@@ -4,6 +4,37 @@
 
 ![Clippy in Microsoft Office](http://i60.tinypic.com/339pvtt.png "Clippy in Microsoft Office")
 
+# Table of Contents
+- [Install](#)
+- [Usage](#)
+	- [Create simple Word Document](#)
+	- [Create Paragraph](#)
+		- [Styles](#)
+			- [Heading1 - Heading5](#)
+			- [Title](#)
+		- [Text Alignment](#)
+			- [Example](#)
+		- [Thematic Break (Page Break)](#)
+	- [Text](#)
+		- [Typographical Emphasis](#)
+			- [Bold](#)
+			- [Italics](#)
+			- [Underline](#)
+		- [Break](#)
+		- [Chaining](#)
+	- [Bullet Points](#)
+	- [Tab Stops](#)
+		- [Left Tab Stop](#)
+		- [Center Tab Stop](#)
+		- [Right Tab Stop](#)
+		- [Max Right Tab Stop](#)
+		- [Example](#)
+- [Exporting](#)
+	- [Express](#)
+	- [Standalone .docx file](#)
+- [Examples](#)
+- [License](#)
+
 # Install
 
 ```sh
