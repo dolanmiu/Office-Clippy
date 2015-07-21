@@ -13,17 +13,22 @@ describe('Testing the exporter', function () {
     'use strict';
 
     it('should create an archive file', function () {
-        var files = [];
+        var file = docx.create(),
+            paragraph = docx.createParagraph().heading1(),
+            text = docx.createText("hello").bold();
+        
+        file.addParagraph(paragraph);
+        paragraph.addText(text);
 
-        //generator.archive(files);
-        packer.local(null, __dirname + '/example-output.zip');
+        var output = fs.createWriteStream(__dirname + '\\example-output.zip');
+        packer.local(output, file);
         assert(true, 'Not done.');
     });
 
     it('should convert officeFile JSON into a valid XML', function () {
-        var file = docx.create();
-        var paragraph = docx.createParagraph().heading1();
-        var text = docx.createText().bold();
+        var file = docx.create(),
+            paragraph = docx.createParagraph().heading1(),
+            text = docx.createText().bold();
         file.addParagraph(paragraph);
         paragraph.addText(text);
 
