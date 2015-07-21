@@ -1,7 +1,8 @@
 #  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-> A tool to create office documents with JS
+> A tool to create office documents (currently only Word Documents) with JS
 
+![Clippy in Microsoft Office](http://i60.tinypic.com/339pvtt.png "Clippy in Microsoft Office")
 
 # Install
 
@@ -22,9 +23,11 @@ var docx = officeClippy.docx;
 var exporter = officeClippy.exporter;
 
 ```
-## Create blank Word Document
+## Create simple Word Document
 ```js
-var file = docx.create();
+var doc = docx.create();
+var paragraph = docx.createParagraph("Some test");
+doc.addParagraph(paragraph);
 ```
 
 ## Create Paragraph
@@ -40,6 +43,12 @@ paragraph.addText(text);
 ```js
 var paragraph = docx.createParagraph("Short hand notation for adding text.");
 ```
+
+After you create the paragraph, you must add the paragraph into the `document`:
+```js
+doc.addParagraph(paragraph);
+```
+
 ### Styles
 Styles is a very important part of the look of a word document. At the moment, only headings and title is supported, but son the rest will be supported along with custom styles!
 
@@ -209,17 +218,25 @@ Coming soon.
 # Examples
 The following section:
 ```js
+var doc = docx.create();
+
 var paragraph = docx.createParagraph("Hello World");
 paragraph.addText("Lorem Ipsum foo bar");
 paragraph.italics();
 paragraph.bold();
+
+doc.addParagraph(paragraph);
 ```
 
 Or:
 ```js
+var doc = docx.create();
+
 var paragraph = docx.createParagraph("Hello World");
 paragraph.addText("Lorem Ipsum foo bar");
 paragraph.italics().bold();
+
+doc.addParagraph(paragraph);
 ```
 Would produce:
 
