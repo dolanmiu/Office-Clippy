@@ -248,7 +248,7 @@ Coming soon.
 
 # Examples
 ## In practice
-I used this library in my personal portfolio/CV website. Click generate CV for a demonstration. [https://www.dolan.bio](https://www.dolan.bio)
+I used this library in my personal portfolio/CV website. Click generate CV for a demonstration. [http://www.dolan.bio](http://www.dolan.bio)
 
 ## General
 #### Simple paragraph
