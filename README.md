@@ -247,6 +247,11 @@ where `res` is the response object obtained through the Express router. It is th
 Coming soon.
 
 # Examples
+## In practice
+I used this library in my personal portfolio/CV website. Click generate CV for a demonstration. [https://www.dolan.bio](https://www.dolan.bio)
+
+## General
+#### Simple paragraph
 The following section:
 ```js
 var doc = docx.create();
