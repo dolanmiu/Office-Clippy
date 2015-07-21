@@ -2,6 +2,8 @@
 
 > A tool to create office documents (currently only Word Documents) with JS
 
+[![NPM](https://nodei.co/npm/office-clippy.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/office-clippy/)
+
 ![Clippy in Microsoft Office](http://i60.tinypic.com/339pvtt.png "Clippy in Microsoft Office")
 
 # Table of Contents
@@ -132,6 +134,7 @@ The above example will create a heading with a page break directly under it.
 Paragraphs need text objects. To create text:
 ```js
 var text = docx.createText("My awesome text here for my university dissertation");
+paragraph.addText(text);
 ```
 Text objects have methods inside which changes the way the text is displayed.
 
