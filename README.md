@@ -171,12 +171,23 @@ paragraph.bold().italic();
 ## Bullet Points
 To make a bullet point, simply make a paragraph into a bullet point:
 ```js
-var text = docx.createText("Bullet point");
+var text = docx.createText("Bullet points");
 var paragraph = docx.createParagraph(text).bullet();
+
+var text2 = docx.createText("Are awesome");
+var paragraph2 = docx.createParagraph(text2).bullet();
+
+doc.addParagraph(paragraph);
+doc.addParagraph(paragraph2);
 ```
+This will produce:
+* Bullet points
+* Are awesome
 
 ## Tab Stops
-If you do not know why tab stops are useful, then I recommend you do a bit of research. It enables side by side text which is nicely laid out without the need for tables, or constantly pressing space bar.
+If you do not know why tab stops are useful, then I recommend you do a bit of research. It enables side by side text which is nicely laid out without the need for tables, or constantly pressing space bar. 
+
+**Note**: At the moment, the unit of measurement for a tab stop is counter intuitive for a human. It is using OpenXMLs own measuring system. For example, 2268 roughly translates to 3cm. Therefore in the future, I may consider changing it to percentages or even cm.
 
 ![Word 2013 Tabs](http://www.teachucomp.com/wp-content/uploads/blog-4-22-2015-UsingTabStopsInWord-1024x577.png "Word 2013 Tab Stops")
 
@@ -233,21 +244,28 @@ paragraph.addText(text);
 The above shows the use of two tab stops, and how to select/use it.
 
 # Exporting
-Currently, the library only supports exporting the Word Document as a downloadable file through an express server.
+I used the express exporter in my [website](http://www.dolan.bio). It's very useful, and is the preferred way if you want to make a downloadable file for a visitor. it is much better than generating a physical file on the server, and then passing a download link to that file.
 ## Express
-Simply use the exporter, and pass in the nessesary parameters:
+Simply use the exporter, and pass in the necessary parameters:
 ```js
 var officeClippy = require('office-clippy');
 var docx = officeClippy.docx;
 var exporter = officeClippy.exporter;
 
 var doc = docx.create();
-exporter.archive(res, doc, 'My first word document');
+exporter.express(res, doc, 'My first word document');
 ```
 where `res` is the response object obtained through the Express router. It is that simple. The file will begin downloading in the browser.
 
 ## Standalone .docx file
-Coming soon.
+```js
+var fs = require('fs');
+
+var doc = docx.create();
+exporter.local(res, doc, 'My first word document');
+var output = fs.createWriteStream(__dirname + '\\My first word document.docx');
+exporter.local(output, doc);
+```
 
 # Examples
 ## In practice
@@ -255,9 +273,9 @@ I used this library in my personal portfolio/CV website. Click generate CV for a
 
 ## General
 #### Simple paragraph
-The following section:
 ```js
 var doc = docx.create();
+var output = fs.createWriteStream(__dirname + '\\example.docx');
 
 var paragraph = docx.createParagraph("Hello World");
 paragraph.addText("Lorem Ipsum foo bar");
@@ -265,17 +283,20 @@ paragraph.italics();
 paragraph.bold();
 
 doc.addParagraph(paragraph);
+exporter.local(output, doc);
 ```
 
 Or:
 ```js
 var doc = docx.create();
+var output = fs.createWriteStream(__dirname + '\\example.docx');
 
 var paragraph = docx.createParagraph("Hello World");
 paragraph.addText("Lorem Ipsum foo bar");
 paragraph.italics().bold();
 
 doc.addParagraph(paragraph);
+exporter.local(output, doc);
 ```
 Would produce:
 
