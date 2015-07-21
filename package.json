@@ -1,6 +1,6 @@
 {
   "name": "office-clippy",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A tool to create office documents with JS",
   "homepage": "https://www.github.com/dolanmiu",
   "author": {
