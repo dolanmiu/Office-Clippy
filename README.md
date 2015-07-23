@@ -139,8 +139,7 @@ paragraph.addText(text);
 Text objects have methods inside which changes the way the text is displayed.
 
 ### Typographical Emphasis
-Soon, strikethrough, overlining, ALL-CAPS, lower case, camelCase, Title Case will be added. At the moment, the standard **bold**, *italics* and underline are avaliable. 
-
+More info [here](https://english.stackexchange.com/questions/97081/what-is-the-typography-term-which-refers-to-the-usage-of-bold-italics-and-unde)
 #### Bold
 ```js
 text.bold();
@@ -154,6 +153,36 @@ text.italics();
 #### Underline
 ```js
 text.underline();
+```
+
+#### Strike through
+```js
+text.strike();
+```
+
+#### Double strike through
+```js
+text.doubleStrike();
+```
+
+#### Superscript
+```js
+text.superScript();
+```
+
+#### Subscript
+```js
+text.subScript();
+```
+
+#### All Capitals
+```js
+text.allCaps();
+```
+
+#### Small Capitals
+```js
+text.smallCaps();
 ```
 
 ### Break
@@ -262,7 +291,6 @@ where `res` is the response object obtained through the Express router. It is th
 var fs = require('fs');
 
 var doc = docx.create();
-exporter.local(res, doc, 'My first word document');
 var output = fs.createWriteStream(__dirname + '\\My first word document.docx');
 exporter.local(output, doc);
 ```
