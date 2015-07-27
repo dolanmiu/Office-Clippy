@@ -41,4 +41,11 @@ describe('Testing creation of docx Office file', function () {
         file.addParagraph(table);
         //console.log(JSON.stringify(file.document));
     });
+
+    it('should create docx with options', function () {
+        var file = docx.create({
+            hello: 'world'
+        });
+        //console.log(JSON.stringify(file.document));
+    });
 });

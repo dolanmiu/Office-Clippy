@@ -15,7 +15,7 @@ describe('Testing the exporter', function () {
         var file = docx.create(),
             paragraph = docx.createParagraph().heading1(),
             text = docx.createText("hello").bold();
-        
+
         file.addParagraph(paragraph);
         paragraph.addText(text);
 
@@ -39,5 +39,17 @@ describe('Testing the exporter', function () {
         var oDOM = oParser.parseFromString(xmlFile, "text/xml");
         //console.log(xmlFile);
         assert.equal('w:document', oDOM.documentElement.nodeName);
+    });
+
+    it('should generate core.xml', function () {
+        var file = docx.create({
+            df: 'hello'   
+        });
+           
+        var xmlFile = jsonToXml(file.properties.core);
+        var oParser = new DOMParser();
+        var oDOM = oParser.parseFromString(xmlFile, "text/xml");
+        console.log(xmlFile);
+        //assert.equal('w:document', oDOM.documentElement.nodeName);
     });
 });
