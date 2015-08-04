@@ -63,6 +63,29 @@ var paragraph = docx.createParagraph("Some test");
 doc.addParagraph(paragraph);
 ```
 
+### Document properties
+You can add properties to the Word document by specifying options, for example:
+```js
+var doc = docx.create({
+    creator: 'Joe Bloggs',
+    description: 'Some descriptive information here',
+    title: 'My first word document'
+});
+```
+
+#### Full list of options:
+```
+creator
+description
+title
+subject
+keywords
+lastModifiedBy
+revision
+```
+
+You can mix and match whatever properties you want, or provide no properties.
+
 ## Create Paragraph
 Every text block in OpenXML is organised in paragraphs. You can add more text to the paragraph by doing this:
 ```js
