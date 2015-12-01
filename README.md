@@ -145,13 +145,21 @@ paragraph.heading1().center();
 ```
 The above will create a `heading 1` which is `centered`.
 
-### Thematic Break (Page Break)
+### Thematic Break
 To add a break in the page, simply add `.thematicBreak()` on a paragraph:
 
 ```js
 var paragraph = docx.createParagraph("Amazing Heading").heading1().thematicBreak();
 ```
 The above example will create a heading with a page break directly under it.
+
+### Page Break
+To move to a new page (insert a page break), simply add `.pageBreak()` on a paragraph:
+
+```js
+var paragraph = docx.createParagraph("Amazing Heading").heading1().pageBreak();
+```
+The above example will create a heading and start a new page immediately afterwards.
 
 ## Text
 Paragraphs need text objects. To create text:
@@ -237,7 +245,7 @@ This will produce:
 * Are awesome
 
 ## Tab Stops
-If you do not know why tab stops are useful, then I recommend you do a bit of research. It enables side by side text which is nicely laid out without the need for tables, or constantly pressing space bar. 
+If you do not know why tab stops are useful, then I recommend you do a bit of research. It enables side by side text which is nicely laid out without the need for tables, or constantly pressing space bar.
 
 **Note**: At the moment, the unit of measurement for a tab stop is counter intuitive for a human. It is using OpenXMLs own measuring system. For example, 2268 roughly translates to 3cm. Therefore in the future, I may consider changing it to percentages or even cm.
 
