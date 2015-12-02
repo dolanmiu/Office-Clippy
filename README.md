@@ -337,9 +337,10 @@ var doc = docx.create();
 var output = fs.createWriteStream(__dirname + '\\example.docx');
 
 var paragraph = docx.createParagraph("Hello World");
-paragraph.addText("Lorem Ipsum foo bar");
-paragraph.italics();
-paragraph.bold();
+var institutionText = docx.createText("University College London").bold(),
+var dateText = docx.createText("5th Dec 2015").tab().bold();
+paragraph.addText(institutionText);
+paragraph.addText(dateText);
 
 doc.addParagraph(paragraph);
 exporter.local(output, doc);
@@ -351,8 +352,10 @@ var doc = docx.create();
 var output = fs.createWriteStream(__dirname + '\\example.docx');
 
 var paragraph = docx.createParagraph("Hello World");
-paragraph.addText("Lorem Ipsum foo bar");
-paragraph.italics().bold();
+var institutionText = docx.createText("University College London").bold(),
+var dateText = docx.createText("5th Dec 2015").tab().bold();
+paragraph.addText(institutionText);
+paragraph.addText(dateText);
 
 doc.addParagraph(paragraph);
 exporter.local(output, doc);
