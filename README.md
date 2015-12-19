@@ -178,7 +178,7 @@ text.bold();
 
 #### Italics
 ```js
-text.italics();
+text.italic();
 ```
 
 #### Underline
