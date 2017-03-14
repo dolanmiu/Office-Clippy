@@ -2,7 +2,7 @@
 
 > A tool to create office documents (currently only Word Documents) with JS
 
-[![NPM](https://nodei.co/npm/office-clippy.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/office-clippy/)
+# This library is deprecated. A newer, more modern one is in development [here](https://github.com/dolanmiu/docx)!
 
 ![Clippy in Microsoft Office](http://i60.tinypic.com/339pvtt.png "Clippy in Microsoft Office")
 
